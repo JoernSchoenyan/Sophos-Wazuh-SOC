@@ -13,7 +13,8 @@ Check the syslog categories you want to forward to Wazuh.
 ## Wazuh settings
 Wazuh needs to be configured to accept logs. I assume you are running Wazuh in a Docker container (my tests are running in Docker / single node setup), you need something like this in config/wazuh_cluster/wazuh_manager.conf
 
-```<remote>
+```
+<remote>
     <connection>syslog</connection>
     <port>514</port>
     <protocol>udp</protocol>

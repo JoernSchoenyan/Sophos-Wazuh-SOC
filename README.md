@@ -18,7 +18,8 @@ Wazuh needs to be configured to accept logs. I assume you are running Wazuh in a
     <port>514</port>
     <protocol>udp</protocol>
     <allowed-ips>INSERT_SOPHOS_FW_IP/24<allowed-ips>
-</remote>```
+</remote>
+```
 
 In the same file, change both logall and logall_json to yes. Start your Docker containers and change some settings in the manager container. You can get into the container with the following command (you need to be in the directory with the docker-compose configuration files):
 

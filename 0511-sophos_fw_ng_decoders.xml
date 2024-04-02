@@ -81,6 +81,36 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
+  <regex>src_mac="(\.+)"</regex>
+  <order>src_mac</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>reported_host="(\.+)"</regex>
+  <order>reported_host</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>src_host="(\.+)"</regex>
+  <order>src_host</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>dst_host="(\.+)"</regex>
+  <order>dst_host</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>lease_time="(\.+)"</regex>
+  <order>lease_time</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
   <regex>dst_ip="(\.+)"</regex>
   <order>dst_ip</order>
 </decoder>
@@ -317,4 +347,70 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>action="(\.+)"</regex>
   <order>antispam_action</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>red="(\.+)"</regex>
+  <order>red</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>yellow="(\.+)"</regex>
+  <order>yellow</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>green="(\.+)"</regex>
+  <order>green</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>total="(\.+)"</regex>
+  <order>total</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ep_name="(\.+)"</regex>
+  <order>ep_name</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ep_uuid="(\.+)"</regex>
+  <order>ep_uuid</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ep_ip="(\.+)"</regex>
+  <order>ep_ip</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ep_health="(\.+)"</regex>
+  <order>ep_health</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ep_event_time="(\.+)"</regex>
+  <order>ep_event_time</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>classification="(\.+)"</regex>
+  <order>classification</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>platform="(\.+)"</regex>
+  <order>platform</order>
 </decoder>

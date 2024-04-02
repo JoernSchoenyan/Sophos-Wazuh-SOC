@@ -62,6 +62,11 @@
         <field name="log_component">CLI</field>
         <description>$(message)</description>
     </rule>
+	
+	<rule id="113822" level="8" frequency="5" timeframe="5">
+        <if_matched_sid>113821</if_matched_sid>
+        <description>There may be a bruteforce attack ongoing</description>
+    </rule>
 
     <!-- 40+ - misc events -->
     <rule id="113840" level="3">
@@ -75,19 +80,105 @@
         <field name="log_component">DHCP</field>
         <description>$(message)</description>
     </rule>
+	
+	<rule id="113842" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_component">Gateway</field>
+        <description>$(message)</description>
+    </rule>
+	
+	<rule id="113843" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_component">HA</field>
+		<field name="severity">Notification</field>
+        <description>HA status changed</description>
+    </rule>
+	
+	<rule id="113844" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">HA</field>
+		<field name="severity">Warning</field>
+        <description>HA has a warning</description>
+    </rule>
+	
+	<rule id="113845" level="5">
+        <if_sid>113800</if_sid>
+		<field name="log_component">Interface</field>
+        <description>$(message)</description>
+    </rule>
 
     <!-- 60+ - Mail events -->
     <rule id="113860" level="5">
         <if_sid>113800</if_sid>
-        <field name="log_component">SMTP</field>
+        <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
         <field name="antispam_action">Quarantine</field>
-        <description>Infected mail in quarantine</description>
+        <description>Mail in quarantine</description>
     </rule>
-
-    <rule id="113861" level="5">
+	
+	<rule id="113861" level="5">
         <if_sid>113800</if_sid>
-        <field name="log_component">SMTPS</field>
-        <field name="antispam_action">Quarantine</field>
-        <description>Infected mail in quarantine</description>
+        <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
+        <field name="antispam_action">Drop</field>
+        <description>Mail dropped: $(reason)</description>
+    </rule>
+	
+	<rule id="113862" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
+        <field name="antispam_action">Reject</field>
+        <description>Mail rejected: $(reason)</description>
+    </rule>
+	
+	<rule id="113863" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
+        <field name="antispam_action">Tmpreject</field>
+        <description>Mail tmp-rejected: $(reason)</description>
+    </rule>
+	
+	<rule id="113864" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
+        <field name="antispam_action">Accept</field>
+        <description>Mail accepted</description>
+    </rule>
+	
+	<!-- 70+ - Heartbeats -->
+	<rule id="113870" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_type">Heartbeat</field>
+		<field name="log_component">Endpoint</field>
+        <description>$(ep_name) changed Heartbeat status to $(ep_health)</description>
+    </rule>
+	
+	<rule id="113871" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_type">Heartbeat</field>
+		<field name="log_component">Heartbeat</field>
+        <description>Heartbeat status of $(total) endpoints reported</description>
+    </rule>
+	
+	<!-- 80+ - IPS/IDS -->
+	<rule id="113880" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_type">IDP</field>
+		<field name="log_subtype">Drop</field>
+        <description>IPS dropped a connection</description>
+    </rule>
+	
+	<rule id="113881" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_type">IDP</field>
+		<field name="log_subtype">Detect</field>
+		<field name="log_component">Anomaly</field>
+        <description>IPS detected a connection with an anomaly</description>
+    </rule>
+	
+	<rule id="113882" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_type">IDP</field>
+		<field name="log_subtype">Detect</field>
+		<field name="log_component">Signatures</field>
+        <description>IPS detected a connection with a known signature</description>
     </rule>
 </group>

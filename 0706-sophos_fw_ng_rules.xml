@@ -16,21 +16,21 @@
         <if_sid>113800</if_sid>
         <field name="log_type">Firewall</field>
         <field name="log_subtype">Denied</field>
-        <description>Traffic Denied: from $(src_ip) to $(dst_ip)</description>
+        <description>Traffic Denied: from $(srcip) to $(dstip)</description>
     </rule>
 
     <rule id="113802" level="3">
         <if_sid>113800</if_sid>
         <field name="log_type">Firewall</field>
         <field name="log_subtype">Allowed</field>
-        <description>Traffic Allowed: from $(src_ip) to $(dst_ip)</description>
+        <description>Traffic Allowed: from $(srcip) to $(dstip)</description>
     </rule>
     
     <rule id="113803" level="5">
         <if_sid>113800</if_sid>
         <field name="log_type">Firewall</field>
         <field name="log_subtype">Drop</field>
-        <description>Connection dropped from $(src_ip) to $(dst_ip)</description>
+        <description>Connection dropped from $(srcip) to $(dstip)</description>
     </rule>
 
     <!-- 10+ - ATP events -->
@@ -38,14 +38,14 @@
         <if_sid>113800</if_sid>
         <field name="log_type">ATP</field>
         <field name="log_subtype">Drop</field>
-        <description>ATP dropped a connection from $(src_ip) to $(dst_ip)</description>
+        <description>ATP dropped a connection from $(srcip) to $(dstip)</description>
     </rule>
     
     <rule id="113811" level="5">
         <if_sid>113800</if_sid>
         <field name="log_type">ATP</field>
         <field name="log_subtype">Alert</field>
-        <description>ATP raised an alert, connection from $(src_ip) to $(dst_ip)</description>
+        <description>ATP raised an alert, connection from $(srcip) to $(dstip)</description>
     </rule>    
     
     <!-- 20+ - Firewall authentication events -->
@@ -101,10 +101,52 @@
         <description>HA has a warning</description>
     </rule>
 	
-	<rule id="113845" level="5">
+	<rule id="113845" level="3">
         <if_sid>113800</if_sid>
 		<field name="log_component">Interface</field>
-        <description>$(message)</description>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported interface usage for $(interface)</description>
+    </rule>
+    
+    <rule id="113846" level="3">
+        <if_sid>113800</if_sid>
+		<field name="log_component">CPU</field>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported CPU usage</description>
+    </rule>
+    
+    <rule id="113847" level="3">
+        <if_sid>113800</if_sid>
+		<field name="log_component">Memory</field>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported RAM usage</description>
+    </rule>
+    
+    <rule id="113848" level="3">
+        <if_sid>113800</if_sid>
+		<field name="log_component">Live User</field>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported active user count</description>
+    </rule>
+    
+    <rule id="113849" level="3">
+        <if_sid>113800</if_sid>
+		<field name="log_component">SSL</field>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported stats about SSL encryption</description>
+    </rule>
+    
+    <rule id="113850" level="3">
+        <if_sid>113800</if_sid>
+		<field name="log_component">Disk</field>
+		<field name="log_type">System Health</field>
+		<field name="log_subtype">Usage</field>
+        <description>FW reported disk space usage</description>
     </rule>
 
     <!-- 60+ - Mail events -->
@@ -159,14 +201,14 @@
     </rule>
 	
 	<!-- 80+ - IPS/IDS -->
-	<rule id="113880" level="5">
+	<rule id="113880" level="8">
         <if_sid>113800</if_sid>
         <field name="log_type">IDP</field>
 		<field name="log_subtype">Drop</field>
         <description>IPS dropped a connection</description>
     </rule>
 	
-	<rule id="113881" level="5">
+	<rule id="113881" level="8">
         <if_sid>113800</if_sid>
         <field name="log_type">IDP</field>
 		<field name="log_subtype">Detect</field>
@@ -174,11 +216,36 @@
         <description>IPS detected a connection with an anomaly</description>
     </rule>
 	
-	<rule id="113882" level="5">
+	<rule id="113882" level="8">
         <if_sid>113800</if_sid>
         <field name="log_type">IDP</field>
 		<field name="log_subtype">Detect</field>
 		<field name="log_component">Signatures</field>
         <description>IPS detected a connection with a known signature</description>
+    </rule>
+    
+    <!-- 90+ - VPN -->
+	<rule id="113890" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+    
+    <rule id="113891" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">L2TP</field>
+        <description>L2TP VPN event: $(sophos_fw_status)</description>
+    </rule>
+    
+    <rule id="113892" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">PPTP</field>
+        <description>PPTP VPN event: $(sophos_fw_status)</description>
+    </rule>
+    
+    <rule id="113893" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">RED</field>
+        <description>RED VPN event: $(sophos_fw_status)</description>
     </rule>
 </group>

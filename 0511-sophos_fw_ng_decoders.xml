@@ -22,7 +22,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>^device_name="(\.+)"\s+timestamp="</regex>
-  <order>device</order>
+  <order>device_name</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -35,6 +35,12 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>device_serial_id="(\.+)"</regex>
   <order>device_serial_id</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>priority="(\.+)"</regex>
+  <order>priority</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -76,7 +82,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>src_ip="(\.+)"</regex>
-  <order>src_ip</order>
+  <order>srcip</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -112,7 +118,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>dst_ip="(\.+)"</regex>
-  <order>dst_ip</order>
+  <order>dstip</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -130,13 +136,13 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>src_port="(\.+)"</regex>
-  <order>src_port</order>
+  <order>srcport</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>dst_port="(\.+)"</regex>
-  <order>dst_port</order>
+  <order>dstport</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -413,4 +419,166 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>platform="(\.+)"</regex>
   <order>platform</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>interface="(\.+)"</regex>
+  <order>interface</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>display_interface="(\.+)"</regex>
+  <order>display_interface</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>receivedkbits=(\d+\.\d\d)</regex>
+  <order>receivedkbits</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>transmittedkbits=(\d+\.\d\d)</regex>
+  <order>transmittedkbits</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>receivederrors=(\d+\.\d\d)</regex>
+  <order>receivederrors</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>transmitteddrops=(\d+\.\d\d)</regex>
+  <order>transmitteddrops</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>collisions=(\d+\.\d\d)</regex>
+  <order>collisions</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>transmittederrors=(\d+\.\d\d)</regex>
+  <order>transmittederrors</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>receiveddrops=(\d+\.\d\d)</regex>
+  <order>receiveddrops</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>Configuration=(\d+\.\d\d)%</regex>
+  <order>Configuration</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>Reports=(\d+\.\d\d)%</regex>
+  <order>Reports</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>Signature=(\d+\.\d\d)%</regex>
+  <order>Signature</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>Temp=(\d+\.\d\d)%</regex>
+  <order>Temp</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>system=(\d+\.\d\d)%</regex>
+  <order>system</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>user=(\d+\.\d\d)%</regex>
+  <order>user</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>idle=(\d+\.\d\d)%</regex>
+  <order>idle</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>non_ssl_count=(\d+)</regex>
+  <order>non_ssl_count</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>ssl_count=(\d+)</regex>
+  <order>ssl_count</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>decrypted_count=(\d+)</regex>
+  <order>decrypted_count</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>users=(\d+)</regex>
+  <order>users</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>total_memory=(\d+)</regex>
+  <order>total_memory</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>free=(\d+)</regex>
+  <order>free</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>used=(\d+)</regex>
+  <order>used</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>connectionname="(\.+)"</regex>
+  <order>connectionname</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>connectionname="(\.+)"</regex>
+  <order>connectionname</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>remote_network="(\.+)"</regex>
+  <order>remote_network</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>local_network="(\.+)"</regex>
+  <order>local_network</order>
 </decoder>

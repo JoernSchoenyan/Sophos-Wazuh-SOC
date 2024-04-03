@@ -36,4 +36,11 @@ In the file `/etc/filebeat/filebeat.yml`, change archives: -> enabled: to true
 - [x] Rules for ATP (Advanced Threat Protection) should be done, but need testing
 - [ ] Authentication events have according rules, but they are very basic right now (only passing the message from the FW)
 - [X] DDNS events only pass the message, but that should be fine
-- [ ] Mail events (SMTP(S), IMAP(S))
+- [X] Mail events (SMTP(S), IMAP(S))
+- [X] Gateway event messages
+- [X] High availability
+- [X] Heartbeats
+- [X] Interface
+- [X] IPS
+
+The document from Sophos isn't clear in every aspect, some rules may be wrong, they need testing. For example, heartbeats are only described for the old syslog format.

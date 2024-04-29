@@ -39,6 +39,9 @@
         <field name="log_type">ATP</field>
         <field name="log_subtype">Drop</field>
         <description>ATP dropped a connection from $(srcip) to $(dstip)</description>
+		<mitre>
+			<id>T1203</id>
+		</mitre>
     </rule>
     
     <rule id="113811" level="5">
@@ -46,6 +49,9 @@
         <field name="log_type">ATP</field>
         <field name="log_subtype">Alert</field>
         <description>ATP raised an alert, connection from $(srcip) to $(dstip)</description>
+		<mitre>
+			<id>T1203</id>
+		</mitre>
     </rule>    
     
     <!-- 20+ - Firewall authentication events -->
@@ -54,6 +60,9 @@
         <field name="log_subtype">Authentication</field>
         <field name="log_component">Firewall Authentication</field>
         <description>$(message)</description>
+		<mitre>
+			<id>T1078</id>
+		</mitre>
     </rule>
 
     <!-- this can be SSH or a local console -->
@@ -66,6 +75,9 @@
 	<rule id="113822" level="8" frequency="5" timeframe="5">
         <if_matched_sid>113821</if_matched_sid>
         <description>There may be a bruteforce attack ongoing</description>
+		<mitre>
+			<id>T1110</id>
+		</mitre>
     </rule>
 
     <!-- 40+ - misc events -->
@@ -155,6 +167,9 @@
         <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
         <field name="antispam_action">Quarantine</field>
         <description>Mail in quarantine</description>
+		<mitre>
+			<id>T1566</id>
+		</mitre>
     </rule>
 	
 	<rule id="113861" level="5">

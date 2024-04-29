@@ -11,7 +11,7 @@
         <description>Sophos Firewall event</description>
     </rule>
 
-    <!-- 01+ - general firewall events -->
+    <!-- 801+ - general firewall events -->
     <rule id="113801" level="5">
         <if_sid>113800</if_sid>
         <field name="log_type">Firewall</field>
@@ -33,7 +33,7 @@
         <description>Connection dropped from $(srcip) to $(dstip)</description>
     </rule>
 
-    <!-- 10+ - ATP events -->
+    <!-- 810+ - ATP events -->
     <rule id="113810" level="5">
         <if_sid>113800</if_sid>
         <field name="log_type">ATP</field>
@@ -54,7 +54,7 @@
 		</mitre>
     </rule>    
     
-    <!-- 20+ - Firewall authentication events -->
+    <!-- 820+ - Firewall authentication events -->
     <rule id="113820" level="5">
         <if_sid>113800</if_sid>
         <field name="log_subtype">Authentication</field>
@@ -80,7 +80,7 @@
 		</mitre>
     </rule>
 
-    <!-- 40+ - misc events -->
+    <!-- 840+ - misc events -->
     <rule id="113840" level="3">
         <if_sid>113800</if_sid>
         <field name="log_component">DDNS</field>
@@ -161,7 +161,7 @@
         <description>FW reported disk space usage</description>
     </rule>
 
-    <!-- 60+ - Mail events -->
+    <!-- 860+ - Mail events -->
     <rule id="113860" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">SMTP|SMTPS|IMAP4|IMAPS|POP3|POPS</field>
@@ -200,7 +200,7 @@
         <description>Mail accepted</description>
     </rule>
 	
-	<!-- 70+ - Heartbeats -->
+	<!-- 870+ - Heartbeats -->
 	<rule id="113870" level="3">
         <if_sid>113800</if_sid>
         <field name="log_type">Heartbeat</field>
@@ -215,7 +215,7 @@
         <description>Heartbeat status of $(total) endpoints reported</description>
     </rule>
 	
-	<!-- 80+ - IPS/IDS -->
+	<!-- 880+ - IPS/IDS -->
 	<rule id="113880" level="8">
         <if_sid>113800</if_sid>
         <field name="log_type">IDP</field>
@@ -239,28 +239,116 @@
         <description>IPS detected a connection with a known signature</description>
     </rule>
     
-    <!-- 90+ - VPN -->
-	<rule id="113890" level="5">
+    <!-- 900+ - VPN -->
+	<rule id="113900" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Established</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113901" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Terminated</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113902" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Disconnected</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113903" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Deny Session</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113904" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Failed</field>
+        <description>IPSec VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113904" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">IPSec</field>
+		<field name="sophos_fw_status">Expire</field>
         <description>IPSec VPN event: $(sophos_fw_status)</description>
     </rule>
     
-    <rule id="113891" level="5">
+    <rule id="113905" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">L2TP</field>
+		<field name="sophos_fw_status">Established</field>
         <description>L2TP VPN event: $(sophos_fw_status)</description>
     </rule>
-    
-    <rule id="113892" level="5">
+	
+	<rule id="113906" level="5">
         <if_sid>113800</if_sid>
-        <field name="log_component">PPTP</field>
-        <description>PPTP VPN event: $(sophos_fw_status)</description>
+        <field name="log_component">L2TP</field>
+		<field name="sophos_fw_status">Terminated</field>
+        <description>L2TP VPN event: $(sophos_fw_status)</description>
     </rule>
-    
-    <rule id="113893" level="5">
+	
+	<rule id="113907" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">RED</field>
+		<field name="sophos_fw_status">Connected</field>
         <description>RED VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113908" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">RED</field>
+		<field name="sophos_fw_status">Disconnected</field>
+        <description>RED VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113909" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">RED</field>
+		<field name="sophos_fw_status">Interim</field>
+        <description>RED VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113910" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">PPTP</field>
+		<field name="sophos_fw_status">Established</field>
+        <description>PPTP VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113911" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">PPTP</field>
+		<field name="sophos_fw_status">Terminated</field>
+        <description>PPTP VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113912" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SSL VPN</field>
+		<field name="sophos_fw_status">Established</field>
+        <description>$(message)</description>
+    </rule>
+	
+	<rule id="113913" level="5">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SSL VPN</field>
+		<field name="sophos_fw_status">Terminated</field>
+        <description>$(message)</description>
+    </rule>
+	
+	<rule id="113914" level="3">
+        <if_sid>113800</if_sid>
+        <field name="log_component">SSL VPN</field>
+		<field name="sophos_fw_status">Allow</field>
+        <description>$(message)</description>
     </rule>
 </group>

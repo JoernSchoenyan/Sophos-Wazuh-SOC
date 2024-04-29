@@ -147,7 +147,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>con_id=(\d+)</regex>
+  <regex>con_id="(\d+)"</regex>
   <order>con_id</order>
 </decoder>
 

@@ -69,7 +69,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>log_version="(\.+)"</regex>
+  <regex>log_version=(\d+)</regex>
   <order>log_version</order>
 </decoder>
 
@@ -135,25 +135,25 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>src_port="(\.+)"</regex>
+  <regex>src_port=(\d+)</regex>
   <order>srcport</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>dst_port="(\.+)"</regex>
+  <regex>dst_port=(\d+)</regex>
   <order>dstport</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>con_id="(\.+)"</regex>
+  <regex>con_id=(\d+)</regex>
   <order>con_id</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>rule_id="(\.+)"</regex>
+  <regex>rule_id=(\d+)</regex>
   <order>rule_id</order>
 </decoder>
 
@@ -165,7 +165,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>profile_id="(\.+)"</regex>
+  <regex>profile_id=(\d+)</regex>
   <order>profile_id</order>
 </decoder>
 
@@ -581,4 +581,22 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>local_network="(\.+)"</regex>
   <order>local_network</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>filename="(\.+)"</regex>
+  <order>filename</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>source="(\.+)"</regex>
+  <order>source</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>destination="(\.+)"</regex>
+  <order>destination</order>
 </decoder>

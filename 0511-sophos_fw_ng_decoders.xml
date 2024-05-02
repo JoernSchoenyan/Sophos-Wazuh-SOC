@@ -357,20 +357,20 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>red="(\.+)"</regex>
-  <order>red</order>
+  <regex>red_endpoint_count=(\d+)</regex>
+  <order>red_endpoint_count</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>yellow="(\.+)"</regex>
-  <order>yellow</order>
+  <regex>yellow_endpoint_count=(\d+)</regex>
+  <order>yellow_endpoint_count</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>green="(\.+)"</regex>
-  <order>green</order>
+  <regex>green_endpoint_count=(\d+)</regex>
+  <order>green_endpoint_count</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -379,6 +379,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <order>total</order>
 </decoder>
 
+<!-- these ep_* could be wrong, needs verification --> 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>ep_name="(\.+)"</regex>
@@ -407,6 +408,18 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>ep_event_time="(\.+)"</regex>
   <order>ep_event_time</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>hb_status="(\.+)"</regex>
+  <order>hb_status</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>reported_host="(\.+)"</regex>
+  <order>reported_host</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -502,19 +515,19 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>system=(\d+\.\d\d)%</regex>
-  <order>system</order>
+  <order>cpu_system</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>user=(\d+\.\d\d)%</regex>
-  <order>user</order>
+  <order>cpu_user</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
   <regex>idle=(\d+\.\d\d)%</regex>
-  <order>idle</order>
+  <order>cpu_idle</order>
 </decoder>
 
 <decoder name="sophos-fw-ng">
@@ -525,7 +538,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
-  <regex>ssl_count=(\d+)</regex>
+  <regex>\sssl_count=(\d+)</regex>
   <order>ssl_count</order>
 </decoder>
 
@@ -599,4 +612,10 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
   <parent>sophos-fw-ng</parent>
   <regex>destination="(\.+)"</regex>
   <order>destination</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>local_ip="(\.+)"</regex>
+  <order>local_ip</order>
 </decoder>

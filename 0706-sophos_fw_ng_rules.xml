@@ -205,7 +205,7 @@
         <if_sid>113800</if_sid>
         <field name="log_type">Heartbeat</field>
 		<field name="log_component">Endpoint</field>
-        <description>$(ep_name) changed Heartbeat status to $(ep_health)</description>
+        <description>$(reported_host) changed Heartbeat status to $(hb_status)</description>
     </rule>
 	
 	<rule id="113871" level="3">
@@ -351,4 +351,99 @@
 		<field name="sophos_fw_status">Allow</field>
         <description>$(message)</description>
     </rule>
+	
+	<!-- 920+ - Sandstorm -->
+	<rule id="113920" level="5">
+		<if_sid>113800</if_sid>
+		<field name="log_type">Sandbox</field>
+		<field name="log_subtype">Pending</field>
+		<description>Sandstorm is analyzing a pending file from $(srcip) with filename $(filename)</description>
+	</rule>
+	
+	<rule id="113921" level="10">
+		<if_sid>113800</if_sid>
+		<field name="log_type">Sandbox</field>
+		<field name="log_subtype">Denied</field>
+		<description>Sandstorm detected a malicious file from $(srcip) with filename $(filename)</description>
+	</rule>
+	
+	<rule id="113922" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">Sandbox</field>
+		<field name="log_subtype">Allowed</field>
+		<description>Sandstorm has analyzed and found the file clean: $(filename) from $(srcip)</description>
+	</rule>
+	
+	<!-- 930+ - SD-WAN -->
+	<rule id="113930" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SD-WAN</field>
+		<field name="log_subtype">Available</field>
+		<description>$(message)</description>
+	</rule>
+	
+	<rule id="113931" level="5">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SD-WAN</field>
+		<field name="log_subtype">Unavailable</field>
+		<description>$(message)</description>
+	</rule>
+	
+	<rule id="113932" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SD-WAN</field>
+		<field name="log_component">Route</field>
+		<description>$(message)</description>
+	</rule>
+	
+	<!-- 940+ - SSL/TLS filter -->
+	<rule id="113940" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SSL</field>
+		<field name="log_subtype">Decrypt</field>
+		<description>SSL connection decrypted</description>
+	</rule>
+	
+	<rule id="113941" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SSL</field>
+		<field name="log_subtype">Reject</field>
+		<description>SSL connection rejected</description>
+	</rule>
+	
+	<rule id="113942" level="5">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SSL</field>
+		<field name="log_subtype">Error</field>
+		<description>Error on decryption of a SSL decryption</description>
+	</rule>
+	
+	<rule id="113943" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SSL</field>
+		<field name="log_subtype">Reject and notify</field>
+		<description>SSL connection rejected</description>
+	</rule>
+	
+	<rule id="113944" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">SSL</field>
+		<field name="log_subtype">Do not decrypt</field>
+		<description>SSL connection was excluded from decryption</description>
+	</rule>
+	
+	<!-- 950+ - Web application firewall -->
+	<rule id="113950" level="8">
+		<if_sid>113800</if_sid>
+		<field name="log_type">WAF</field>
+		<field name="reason">waf|cookie|url hardening|av|geoip|dnsrbl</field>
+		<description>WAF intercepted a request</description>
+	</rule>
+	
+	<rule id="113951" level="3">
+		<if_sid>113800</if_sid>
+		<field name="log_type">WAF</field>
+		<field name="reason">-</field>
+		<description>WAF accepted a request for $(local_ip)</description>
+	</rule>
 </group>

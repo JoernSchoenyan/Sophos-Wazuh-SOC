@@ -22,15 +22,6 @@ Wazuh needs to be configured to accept logs. I assume you are running Wazuh in a
 </remote>
 ```
 
-Start your Docker containers and change a setting in the manager container. You can get into the container with the following command (you need to be in the directory with the docker-compose configuration files):
-
-`docker-compose exec wazuh.manager bash`
-
-In the file `/etc/filebeat/filebeat.yml`, change archives: -> enabled: to true
-
-> [!WARNING]
-> I haven't checked yet if this file change survives updates.
-
 ## Completed rules
 - [x] Basic firewall events (traffic allowed / denied) are fine
 - [x] Rules for ATP (Advanced Threat Protection) should be done, but need testing

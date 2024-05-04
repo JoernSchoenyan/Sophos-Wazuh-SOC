@@ -372,7 +372,7 @@
 		<if_sid>113800</if_sid>
 		<field name="log_type">Sandbox</field>
 		<field name="log_subtype">Allowed</field>
-		<description>Sandstorm has analyzed and found the file clean: $(filename) from $(srcip)</description>
+		<description>Sandstorm has analyzed a file and found it clean</description>
 	</rule>
 	
 	<!-- 930+ - SD-WAN -->

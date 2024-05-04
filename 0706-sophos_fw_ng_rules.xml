@@ -213,7 +213,7 @@
         <if_sid>113800</if_sid>
         <field name="log_type">Heartbeat</field>
 		<field name="log_component">Heartbeat</field>
-        <description>Heartbeat status of $(total) endpoints reported</description>
+        <description>Heartbeat status of endpoints reported</description>
     </rule>
 	
 	<!-- 880+ - IPS/IDS -->

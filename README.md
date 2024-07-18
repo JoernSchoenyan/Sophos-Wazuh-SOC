@@ -18,9 +18,11 @@ Wazuh needs to be configured to accept logs. I assume you are running Wazuh in a
     <connection>syslog</connection>
     <port>514</port>
     <protocol>udp</protocol>
-    <allowed-ips>INSERT_SOPHOS_FW_IP<allowed-ips>
+    <allowed-ips>INSERT_SOPHOS_FW_IP</allowed-ips>
 </remote>
 ```
+
+You can add multiple <allowed-ips>-fields for multiple firewalls.
 
 ## Completed rules
 - [x] Basic firewall events (traffic allowed / denied) are fine

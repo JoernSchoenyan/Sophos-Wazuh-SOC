@@ -276,77 +276,77 @@
         <description>IPSec VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113904" level="5">
+	<rule id="113905" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">IPSec</field>
 		<field name="sophos_fw_status">Expire</field>
         <description>IPSec VPN event: $(sophos_fw_status)</description>
     </rule>
     
-    <rule id="113905" level="5">
+    <rule id="113906" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">L2TP</field>
 		<field name="sophos_fw_status">Established</field>
         <description>L2TP VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113906" level="5">
+	<rule id="113907" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">L2TP</field>
 		<field name="sophos_fw_status">Terminated</field>
         <description>L2TP VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113907" level="5">
+	<rule id="113908" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">RED</field>
 		<field name="sophos_fw_status">Connected</field>
         <description>RED VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113908" level="5">
+	<rule id="113909" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">RED</field>
 		<field name="sophos_fw_status">Disconnected</field>
         <description>RED VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113909" level="5">
+	<rule id="113910" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">RED</field>
 		<field name="sophos_fw_status">Interim</field>
         <description>RED VPN event: $(sophos_fw_status)</description>
     </rule>
 	
-	<rule id="113910" level="5">
-        <if_sid>113800</if_sid>
-        <field name="log_component">PPTP</field>
-		<field name="sophos_fw_status">Established</field>
-        <description>PPTP VPN event: $(sophos_fw_status)</description>
-    </rule>
-	
 	<rule id="113911" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">PPTP</field>
-		<field name="sophos_fw_status">Terminated</field>
+		<field name="sophos_fw_status">Established</field>
         <description>PPTP VPN event: $(sophos_fw_status)</description>
     </rule>
 	
 	<rule id="113912" level="5">
         <if_sid>113800</if_sid>
+        <field name="log_component">PPTP</field>
+		<field name="sophos_fw_status">Terminated</field>
+        <description>PPTP VPN event: $(sophos_fw_status)</description>
+    </rule>
+	
+	<rule id="113913" level="5">
+        <if_sid>113800</if_sid>
         <field name="log_component">SSL VPN</field>
 		<field name="sophos_fw_status">Established</field>
         <description>$(message)</description>
     </rule>
 	
-	<rule id="113913" level="5">
+	<rule id="113914" level="5">
         <if_sid>113800</if_sid>
         <field name="log_component">SSL VPN</field>
 		<field name="sophos_fw_status">Terminated</field>
         <description>$(message)</description>
     </rule>
 	
-	<rule id="113914" level="3">
+	<rule id="113915" level="3">
         <if_sid>113800</if_sid>
         <field name="log_component">SSL VPN</field>
 		<field name="sophos_fw_status">Allow</field>

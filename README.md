@@ -45,3 +45,6 @@ You can add multiple <allowed-ips>-fields for multiple firewalls.
 - [ ] Wireless
 
 The document from Sophos isn't clear in every aspect, some rules may be wrong, they need testing. For example, heartbeats are only described for the old syslog format.
+
+> [!CAUTION]
+> Call for help: if you have an example for the Application filter, feel free to open an issue with it. This seems to be wrong in the documentation or I'm not understanding it correctly.

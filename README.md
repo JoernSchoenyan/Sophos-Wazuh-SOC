@@ -1,5 +1,5 @@
 # Create a SOC with Wazuh and Sophos Firewall
-Rules and decoders for Wazuh to process the syslog from Sophos firewalls. You can find a reference document from Sophos [here](https://docs.sophos.com/nsg/sophos-firewall/20.0/pdf/sf-syslog-guide-20.0.pdf).
+Rules and decoders for Wazuh to process the syslog from Sophos firewalls. You can find a reference document from Sophos [here](https://docs.sophos.com/nsg/sophos-firewall/22.0/pdf/sf-syslog-guide-22.0.pdf).
 
 > [!CAUTION]
 > Decoders and rules aren't complete, but pretty usable now. But please check for updates on a regular basis!

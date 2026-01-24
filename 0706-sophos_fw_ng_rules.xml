@@ -505,4 +505,12 @@
 		<description>WAF accepted a request for $(local_ip)</description>
         <options>no_full_log</options>
 	</rule>
+
+    <!-- 960+ - NDR -->
+	<rule id="113960" level="8">
+		<if_sid>113800</if_sid>
+		<field name="threatscore">\.+</field>
+		<description>NDR detected a threat named $(threat)</description>
+        <options>no_full_log</options>
+	</rule>
 </group>

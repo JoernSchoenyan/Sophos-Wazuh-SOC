@@ -339,6 +339,42 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
+  <regex>threat="(\.+)"</regex>
+  <order>threat</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>type="(\.+)"</regex>
+  <order>type</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>host_login_user="(\.+)"</regex>
+  <order>host_login_user</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>host_process_user="(\.+)"</regex>
+  <order>host_process_user</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>endpoint_id="(\.+)"</regex>
+  <order>endpoint_id</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
+  <regex>execution_path="(\.+)"</regex>
+  <order>execution_path</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
   <regex>threatfeed="(\.+)"</regex>
   <order>threatfeed</order>
 </decoder>

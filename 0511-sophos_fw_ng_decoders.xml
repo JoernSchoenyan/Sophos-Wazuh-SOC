@@ -381,6 +381,12 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 
 <decoder name="sophos-fw-ng">
   <parent>sophos-fw-ng</parent>
+  <regex>threatscore="(\d+)"</regex>
+  <order>threatscore</order>
+</decoder>
+
+<decoder name="sophos-fw-ng">
+  <parent>sophos-fw-ng</parent>
   <regex>sender="(\.+)"</regex>
   <order>sender</order>
 </decoder>

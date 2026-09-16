@@ -10,7 +10,7 @@ device_name="SFW" timestamp="2020-04-18T01:13:48+0200" device_model="SF01V" devi
 -->
 
 <decoder name="sophos-fw-ng">
-  <prematch>^device_name="\w*"\s+timestamp=</prematch>
+  <prematch>^device_name="\S+"\s+timestamp=</prematch>
 </decoder>
 
 <decoder name="sophos-fw-ng">
